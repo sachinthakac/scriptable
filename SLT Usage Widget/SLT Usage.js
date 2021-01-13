@@ -15,7 +15,7 @@ const fileLog = importModule("FileLog");
 await fileLog.clear();
 
 const URLDASHBOARD = "https://internetvas.slt.lk/dashboard";
-const URLHYSTORY = "https://internetvas.slt.lk/reports/usage-history";
+const URLHISTORY = "https://internetvas.slt.lk/reports/usage-history";
 
 const JSDATAEVAL = String.raw`
 function extract() {
@@ -127,7 +127,7 @@ async function load(present = false) {
   let dashboard = await webViewDashboard.evaluateJavaScript(JSDATAEVAL, true);
 
   let webViewHistory = new WebView();
-  let requestHystory = new Request(URLHYSTORY);
+  let requestHystory = new Request(URLHISTORY);
   await webViewHistory.loadRequest(requestHystory);
   let history = await webViewHistory.evaluateJavaScript(JSHISTORYEVAL, true);
 
